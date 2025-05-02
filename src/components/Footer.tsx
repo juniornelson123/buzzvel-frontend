@@ -1,0 +1,42 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white flex w-full mx-auto justify-center items-center flex-col h-[420px]">
+      <div class="flex w-full container border-b border-gray-700 py-8 justify-between">
+        <div>
+          <Image src="/logo-footer.png" width={175} height={35} />
+        </div>
+        {
+          [1, 2, 3, 4, 5].map(item => (
+            <ul className="gap-4 flex flex-col">
+              <li><Link href="/" className="font-bold">Product</Link></li>
+              <li><Link href="/">Pricing</Link></li>
+              <li><Link href="/">Overview</Link></li>
+              <li><Link href="/">Browse</Link></li>
+              <li><Link href="/">Accessibility<span className="ml-2 text-xs bg-purple-100 text-purple-600 rounded py-1 px-2">BETA</span></Link></li>
+            </ul>
+          ))
+        }
+      </div>
+      <div className="container flex justify-between w-full py-4 mt-4">
+        <div>
+          <p>uteach @ 2023. All rights reserved.</p>
+        </div>
+        <div className="flex gap-4">
+          <Link href="/">Terms</Link>
+          <Link href="/">Privacy</Link>
+          <Link href="/">Contact</Link>
+          <div class="flex">
+            <Image src="/world.svg" width={24} height={24} className="mr-1" />EN
+          </div>
+          <div class="flex">
+            <Image src="/euro.svg" width={24} height={24} className="mr-1" />EUR
+          </div>
+          <Image src="/accessibility.svg" width={24} height={24} />
+        </div>
+      </div>
+    </footer>
+  );
+}
