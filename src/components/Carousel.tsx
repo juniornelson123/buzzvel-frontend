@@ -54,7 +54,7 @@ const CarouselData = ({ images }) => {
         {images.map((src, i) => (
           <div
           key={i}
-          className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] px-2"
+          className="flex-[0_0_40%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] px-2"
         >
             <div className="py-4 flex flex-row gap-4 mt-8">
               <Card />
@@ -66,7 +66,7 @@ const CarouselData = ({ images }) => {
         prevEnabled && (
           <button
             onClick={scrollPrev}
-            className="p-2 cursor-pointer w-12 border-2 border-orange-600 rounded-full h-12"
+            className="hidden lg:block p-2 cursor-pointer w-12 border-2 border-orange-600 rounded-full h-12"
           >
             <Image src="arrow-left.svg" width={24} height={24}/>
           </button>
@@ -77,7 +77,7 @@ const CarouselData = ({ images }) => {
           <button
             onClick={scrollNext}
             disabled={!nextEnabled}
-            className="ml-4 p-2 cursor-pointer w-12 border-2 border-orange-600 rounded-full h-12"
+            className="hidden lg:block ml-4 p-2 cursor-pointer w-12 border-2 border-orange-600 rounded-full h-12"
           >
             <Image src="arrow-right.svg" width={24} height={24}/>
           </button>
@@ -125,10 +125,10 @@ export default function Carousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="container mx-auto px-4 py-4 flex mt-8">
+    <div className="container mx-auto px-4 py-4 flex mt-4 lg:mt-8">
       <div className="py-4 flex flex-col">
         <div className="flex justify-between">
-          <h2 className="text-5xl text-gray-900 font-extrabold relative">What everyone says</h2>
+          <h2 className="text-2xl lg:text-5xl text-gray-900 font-bold lg:font-extrabold relative">What everyone says</h2>
           <div>
             {
               prevEnabled && (
@@ -158,9 +158,9 @@ export default function Carousel() {
             {images.map((src, i) => (
               <div
               key={i}
-              className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] px-2"
+              className="flex-[0_0_40%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] px-2"
             >
-                <div className="py-4 flex flex-row gap-4 mt-8">
+                <div className="py-4 flex flex-row gap-4 lg:mt-8">
                   <Card />
                 </div>
               </div>

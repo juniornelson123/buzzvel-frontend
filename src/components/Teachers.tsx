@@ -50,17 +50,17 @@ const maxColSpan = 2
 
 export default function About() {
   return (
-    <div className="container mx-auto px-4 py-4 flex h-[700px] items-center">
-      <div className="w-1/2 px-4 py-4 flex flex-col relative h-full items-center">
+    <div className="mt-4 flex-col-reverse lg:flex-row container mx-auto px-4 py-4 flex h-[700px] items-center">
+      <div className="w-full lg:w-1/2 px-4 py-4 flex flex-col relative h-full items-center">
         <MasonryGallery items={items} />
       </div>
-      <div className="py-4 px-8 ml-4 flex flex-col w-1/2 relative h-full justify-center">
-        <img src="plane-departure.svg" alt="conteúdo" class="top-35 right-40 absolute" />
-        <h2 className="text-5xl text-gray-900 font-extrabold">
+      <div className="lg:py-4 lg:px-8 lg:ml-4 flex flex-col w-full lg:w-1/2 relative h-full justify-center">
+        <img src="plane-departure.svg" alt="conteúdo" class="w-8 lg:w-16 top-0 lg:top-35 right-40 absolute" />
+        <h2 className="text-2xl lg:text-5xl text-gray-900 font-extrabold">
           <span>Meet international students & teachers</span>
         </h2>
-        <p className="mt-8">Morbi sit egestas dignissim pharetra, sed amet. Tempus justo senectus risus ac vel, velit, nunc. Eget commodo eget in aliquam facilisi facilisi nec magna hendrerit. Placerat ipsum sit tellus urna, faucibus aenean lorem faucibus integer.</p>
-        <Link href="/login" className="mt-8 py-2 items-center border-0 border-black text-blue-600 font-semibold rounded-lg hover:border-2 hover:border-blue-600 flex">
+        <p className="mt-4 lg:mt-8">Morbi sit egestas dignissim pharetra, sed amet. Tempus justo senectus risus ac vel, velit, nunc. Eget commodo eget in aliquam facilisi facilisi nec magna hendrerit. Placerat ipsum sit tellus urna, faucibus aenean lorem faucibus integer.</p>
+        <Link href="/login" className="mt-4 lg:mt-8 py-2 items-center border-0 border-black text-blue-600 font-semibold rounded-lg hover:border-2 hover:border-blue-600 flex">
           Explore teachers and students <span className="ml-1"><Image src="/arrow_right.svg" width={12} height={12} /></span>
         </Link>
       </div>

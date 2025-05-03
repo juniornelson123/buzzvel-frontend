@@ -19,10 +19,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="mx-auto px-4 py-4 flex h-[779px] justify-center items-center bg-orange-600 flex-col relative">
-      <h2 className="text-center text-5xl text-white font-extrabold relative">Ready for your next project?</h2>
-      <p className="text-center mt-8 w-2/4 text-white text-2xl font-extralight">Sit elit feugiat turpis sed integer integer accumsan turpis.</p>
-      <form onSubmit={handleSubmit} className="w-1/4 mt-8 items-center">
+    <div className="mx-auto px-4 py-4 flex h-[610px] lg:h-[779px] justify-center items-center bg-orange-600 flex-col relative">
+      <h2 className="text-center text-4xl lg:text-5xl text-white font-extrabold relative">Ready for your next project?</h2>
+      <p className="text-center mt-8 lg:w-2/4 text-white text-2xl font-extralight">Sit elit feugiat turpis sed integer integer accumsan turpis.</p>
+      <form onSubmit={handleSubmit} className="w-full lg:w-1/4 mt-8 items-center">
         
         <label htmlFor="email" className="block text-sm font-medium text-white">
           Email

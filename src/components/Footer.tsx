@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white flex w-full mx-auto justify-center items-center flex-col h-[420px]">
-      <div class="flex w-full container border-b border-gray-700 py-8 justify-between">
+    <footer className="px-8 bg-gray-900 text-white flex w-full mx-auto justify-center items-center flex-col lg:h-[420px]">
+      <div class="flex w-full container border-b border-gray-700 py-8 justify-between flex-col lg:flex-row">
         <div>
           <Image src="/logo-footer.png" width={175} height={35} />
         </div>
         {
           [1, 2, 3, 4, 5].map(item => (
-            <ul className="gap-4 flex flex-col">
+            <ul className="gap-4 flex flex-col mt-8 lg:mt-0">
               <li><Link href="/" className="font-bold">Product</Link></li>
               <li><Link href="/">Pricing</Link></li>
               <li><Link href="/">Overview</Link></li>
@@ -20,13 +20,13 @@ export default function Footer() {
           ))
         }
       </div>
-      <div className="container flex justify-between w-full py-4 mt-4">
+      <div className="container flex justify-between w-full py-4 mt-4 flex-col lg:flex-row">
         <div>
           <p>uteach @ 2023. All rights reserved.</p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 mt-8 lg:mt-0">
           <Link href="/">Terms</Link>
-          <Link href="/">Privacy</Link>
+          <Link href="/" className="hidden lg:block">Privacy</Link>
           <Link href="/">Contact</Link>
           <div class="flex">
             <Image src="/world.svg" width={24} height={24} className="mr-1" />EN

@@ -7,19 +7,19 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 const Card = () => {
   return (
-    <div className="flex w-full items-center z-10 h-full">
-      <div className="flex w-1/2">
+    <div className="flex w-full items-center z-10 h-full flex-col lg:flex-row">
+      <div className="flex w-full lg:w-1/2">
         <div className="flex flex-col justify-center w-2/3">
-          <p className="text-lg mb-6">Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.</p>
-          <p className="text-lg">Marie Poirot,</p>
-          <p className="text-lg font-bold">Bigapp</p>
+          <p className="text-base lg:text-lg mb-6">Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.</p>
+          <p className="text-base lg:text-lg">Marie Poirot,</p>
+          <p className="text-base lg:text-lg font-bold">Bigapp</p>
         </div>
       </div>
-      <div className="flex flex-col justify-center w-1/2 h-full relative">
-        <div className="absolute w-[495px] h-[573px] top-[-50%] rounded-[50px] rotate-[30deg] bg-gray-900" />
-        <img src="testimonialimage.jpg" className="top-[-5%] absolute border-5 border-gray-900 w-[528px] h-[415px] rounded-[50px] object-cover" />
-        <img src="chat-quote.svg" className="absolute top-[-20%] right-70" />
-        <img src="decorations.svg" className="absolute bottom-[-150%] left-0" />
+      <div className="flex flex-col justify-center w-full lg:w-1/2 lg:h-full relative">
+        <div className="absolute w-[325px] h-[375px] lg:w-[495px] lg:h-[573px] right-25 lg:right-40 top-20 lg:top-[-10%] rounded-[50px] rotate-[30deg] bg-gray-900" />
+        <img src="testimonialimage.jpg" className="left-[-2%] top-30 lg:top-[-5%] absolute border-5 border-gray-900 w-[361px] h-[294px] lg:w-[528px] lg:h-[415px] rounded-[50px] object-cover" />
+        <img src="chat-quote.svg" className="absolute top-[-20%] right-30 lg:right-20" />
+        <img src="decorations.svg" className="absolute top-90 bottom-[-150%] left-0" />
       </div>
     </div>
   )
@@ -63,7 +63,7 @@ const Carousel = ({ images }) => {
 
   return (
     <div className="relative" ref={emblaRef}>
-      <div className="flex px-4 py-8 ">
+      <div className="flex px-2 lg:px-4 py-8 ">
         {images.map((src, i) => (
           <div className="min-w-full" key={i}>
             <Card />
@@ -74,7 +74,7 @@ const Carousel = ({ images }) => {
         prevEnabled && (
           <button
             onClick={scrollPrev}
-            className="absolute left-[-5%] top-1/2 -translate-y-1/2 p-2 cursor-pointer"
+            className="hidden lg:block absolute left-[-5%] top-1/2 -translate-y-1/2 p-2 cursor-pointer"
           >
             <Image src="chevron_left.svg" width={18} height={32}/>
           </button>
@@ -85,7 +85,7 @@ const Carousel = ({ images }) => {
           <button
             onClick={scrollNext}
             disabled={!nextEnabled}
-            className="absolute right-15 top-1/2 -translate-y-1/2 p-2 cursor-pointer"
+            className="hidden lg:block absolute right-15 top-1/2 -translate-y-1/2 p-2 cursor-pointer"
           >
             <Image src="chevron_right.svg" width={18} height={32}/>
           </button>
@@ -110,9 +110,9 @@ const Carousel = ({ images }) => {
 
 export default function Testimonial() {
   return (
-    <div className="mx-auto px-4 py-4 h-[575px] flex mt-8 bg-yellow-400 justify-center">
-      <div className="container py-4 flex flex-col  h-full">
-        <div className="py-4 flex flex-row gap-4 mt-8  h-full">
+    <div className="mx-auto px-2 py-2 lg:px-4 lg:py-4 h-[684px] lg:h-[575px] flex lg:mt-8 bg-yellow-400 justify-center">
+      <div className="container flex flex-col  h-full">
+        <div className="flex flex-row gap-4 h-full">
           <Carousel images={images} />
         </div>
       </div>
