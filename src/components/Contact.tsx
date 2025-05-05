@@ -8,12 +8,9 @@ export default function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  // Tipando o parâmetro 'e' como 'React.FormEvent<HTMLFormElement>'
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (onSubmit) {
-      onSubmit({ email, message });
-    }
-    // Clear form
     setEmail('');
     setMessage('');
   };
@@ -54,7 +51,7 @@ export default function Contact() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="mt-8 px-8 py-3 items-center border-2 border-gray-900 bg-gray-900 text-white font-semibold rounded-lg hover:border-2 hover:bg-transparent hover:text-orange-600 text-lg"
+            className="cursor-pointer mt-8 px-8 py-3 items-center border-2 border-gray-900 bg-gray-900 text-white font-semibold rounded-lg text-lg transition-transform transform hover:scale-105"
           >
             Request Demo
           </button>

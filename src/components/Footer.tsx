@@ -4,13 +4,13 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="px-8 bg-gray-900 text-white flex w-full mx-auto justify-center items-center flex-col lg:h-[420px]">
-      <div class="flex w-full container border-b border-gray-700 py-8 justify-between flex-col lg:flex-row">
+      <div className="flex w-full container border-b border-gray-700 py-8 justify-between flex-col lg:flex-row">
         <div>
-          <Image src="/logo-footer.png" width={175} height={35} />
+          <Image src="/logo-footer.png" alt="logo" width={175} height={35} />
         </div>
         {
           [1, 2, 3, 4, 5].map(item => (
-            <ul className="gap-4 flex flex-col mt-8 lg:mt-0">
+            <ul className="gap-4 flex flex-col mt-8 lg:mt-0" key={item}>
               <li><Link href="/" className="font-bold">Product</Link></li>
               <li><Link href="/">Pricing</Link></li>
               <li><Link href="/">Overview</Link></li>
@@ -28,13 +28,13 @@ export default function Footer() {
           <Link href="/">Terms</Link>
           <Link href="/" className="hidden lg:block">Privacy</Link>
           <Link href="/">Contact</Link>
-          <div class="flex">
-            <Image src="/world.svg" width={24} height={24} className="mr-1" />EN
+          <div className="flex">
+            <Image src="/world.svg" alt="world" width={24} height={24} className="mr-1" />EN
           </div>
-          <div class="flex">
-            <Image src="/euro.svg" width={24} height={24} className="mr-1" />EUR
+          <div className="flex">
+            <Image src="/euro.svg" alt="euro" width={24} height={24} className="mr-1" />EUR
           </div>
-          <Image src="/accessibility.svg" width={24} height={24} />
+          <Image src="/accessibility.svg" alt="accessibility" width={24} height={24} />
         </div>
       </div>
     </footer>
