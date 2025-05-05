@@ -20,7 +20,7 @@ const fadeIn = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen gap-16 font-[family-name:var(--font-roboto)] overflow-hidden">
+    <div className="min-h-screen gap-16 font-[family-name:var(--font-roboto)] overflow-hidden bg-white text-gray-900">
       <Header />
       {[Hero, About, Testimonial, Teachers, Numbers, Carousel, Features, Join, Contact].map((Component, i) => (
         <motion.section
