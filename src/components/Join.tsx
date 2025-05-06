@@ -1,24 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const Card = () => {
-  return (
-    <motion.div
-      className="shadow-xl w-[225px] z-10 bg-white px-4 py-8 rounded-xl"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <p className="py-1 px-3 bg-blue-100 text-blue-800 rounded w-fit text-sm">Popular</p>
-      <p className="text-xl font-medium my-2">Design for how people think</p>
-      <p className="text-gray-600 text-sm mb-6">Aliquam ut euismod condimentum elementum ultricies volutpat sit non.</p>
-      <Link href="/sign-up" className="text-sm mr-2 px-8 py-3 border-2 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white">
-        Take Lesson
-      </Link>
-    </motion.div>
-  );
-};
-
 export default function Join() {
   return (
     <motion.div

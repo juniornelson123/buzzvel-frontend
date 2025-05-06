@@ -8,7 +8,25 @@ export const fadeInAbout = {
   viewport: { once: true },
 };
 
-export const Card = ( { title, description, tag, link, size, color, bgColor } ) => (
+interface CardProps {
+  title: string;
+  description: string;
+  tag: string;
+  link: string;
+  size?: string;
+  color?: string;
+  bgColor?: string;
+}
+
+export const Card = ({
+  title,
+  description,
+  tag,
+  link,
+  size = '',
+  color = '',
+  bgColor = '',
+}: CardProps) => (
   <motion.div
     className={`flex flex-col shadow-xl ${size} z-10 bg-white px-4 py-6 lg:py-8 rounded-xl`}
     {...fadeInAbout}

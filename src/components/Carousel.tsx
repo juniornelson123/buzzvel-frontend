@@ -12,6 +12,14 @@ interface CarouselNavigationProps {
   scrollNext: () => void;
 }
 
+const items = [
+  { image: '/testimage1.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage2.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage3.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage4.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage1.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+];
+
 const CarouselNavigation: React.FC<CarouselNavigationProps> = ({ prevEnabled, nextEnabled, scrollPrev, scrollNext }) => (
   <div>
     {prevEnabled && (
@@ -26,56 +34,6 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({ prevEnabled, ne
     )}
   </div>
 );
-
-const CarouselData = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
-  const [prevEnabled, setPrevEnabled] = useState(true);
-  const [nextEnabled, setNextEnabled] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setPrevEnabled(emblaApi.canScrollPrev());
-    setNextEnabled(emblaApi.canScrollNext());
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    setScrollSnaps(emblaApi.scrollSnapList());
-    emblaApi.on('select', onSelect);
-  }, [emblaApi, onSelect]);
-
-  return (
-    <div className="relative" ref={emblaRef}>
-      <div className="flex">
-        {images.map((src, i) => (
-          <div
-            key={i}
-            className="flex-[0_0_40%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] px-2"
-          >
-            <div className="py-4 flex flex-row gap-4 mt-8">
-              <Card />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const items = [
-  { image: '/testimage1.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
-  { image: '/testimage2.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
-  { image: '/testimage3.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
-  { image: '/testimage4.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
-  { image: '/testimage5.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
-];
 
 export default function Carousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel();

@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link';
-import {useMemo} from 'react';
 import { motion } from 'framer-motion';
 
 interface MasonryItem {
@@ -63,11 +62,6 @@ const items = [
   { src: '/imageexample10.jpg', alt: 'Tronco de árvore com musgo' },
 ];
 
-
-const columns = 4
-const gutter = 4
-const maxRowSpan = 2
-const maxColSpan = 2
 
 export default function About() {
   return (

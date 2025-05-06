@@ -1,6 +1,13 @@
 import Image from 'next/image';
 
-export const CardCarousel = ( { description, author, role, image } ) => {
+interface CardCarouselProps {
+  description: string;
+  author: string;
+  role: string;
+  image: string;
+}
+
+export const CardCarousel = ( { description, author, role, image }: CardCarouselProps) => {
   return (
     <div className="shadow-xl items-center z-10 bg-white px-4 py-8 rounded-xl">
       <p className="text-lg mb-6">{description}</p>
