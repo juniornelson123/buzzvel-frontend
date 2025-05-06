@@ -21,7 +21,7 @@ const FeaturesContent = () => (
     </p>
     <Link href="/#">
       <div className="text-sm lg:text-base mt-8 py-2 items-center border-0 border-black text-blue-600 font-semibold rounded-lg flex cursor-pointer transition-all duration-300">
-        Find more about the app 
+        View all the features
         <span className="ml-1">
           <Image src="/arrow_right.svg" alt="arrow_right" width={12} height={12} />
         </span>
