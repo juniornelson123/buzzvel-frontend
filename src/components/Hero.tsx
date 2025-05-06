@@ -35,7 +35,7 @@ export default function Hero() {
             Sign Up Now
           </Link>
           <Link
-            href="/login"
+            href="/#"
             className="items-center px-2 text-sm lg:text-base lg:px-8 py-2 border-0 border-blue-600 text-blue-600 font-semibold rounded-lg hover:border-2 hover:border-blue-600 flex transition-all duration-300"
           >
             <span className="mr-1">

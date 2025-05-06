@@ -1,14 +1,11 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link';
 import React, { useState } from 'react';
 
 export default function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  // Tipando o parâmetro 'e' como 'React.FormEvent<HTMLFormElement>'
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setEmail('');

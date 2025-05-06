@@ -42,6 +42,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${roboto.variable} font-sans`}
+        cz-shortcut-listen="true"
       >
         {children}
       </body>

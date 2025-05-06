@@ -50,7 +50,7 @@ export default function Header() {
         </div>
 
         <div className="hidden lg:flex space-x-4">
-          <Link href="/login" className="px-4 py-2 border-0 text-black font-semibold rounded-lg hover:text-orange-600">Log In</Link>
+          <Link href="/#" className="px-4 py-2 border-0 text-black font-semibold rounded-lg hover:text-orange-600">Log In</Link>
           <Link href="/sign-up" className="px-4 py-2 border-2 border-black text-black font-semibold rounded-lg hover:bg-orange-600 hover:border-orange-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             Sign Up Now
           </Link>

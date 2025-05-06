@@ -10,7 +10,7 @@ interface DataItemProps {
 const DataItem = ({ image, number, text }: DataItemProps) => {
   return (
     <div className="flex flex-col items-center">
-      <img src={image} alt="conteúdo" className="" />
+      <Image src={image} alt="conteúdo" width={64} height={64} />
       <p className="mt-2 lg:mt-8 text-5xl lg:text-7xl text-yellow-400 font-bold">{number}</p> 
       <p className="mt-2 lg:mt-8 text-xl text-yellow-400">{text}</p> 
     </div>

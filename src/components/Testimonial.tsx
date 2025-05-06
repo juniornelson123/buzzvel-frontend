@@ -21,8 +21,10 @@ const Card = () => {
         <img
           src="testimonialimage.jpg"
           alt="Depoimento"
-          className="left-[-2%] top-30 lg:top-[-5%] absolute border-5 border-gray-900 w-[361px] h-[294px] lg:w-[528px] lg:h-[415px] rounded-[50px] object-cover"
+          className="left-[-2%] top-30 lg:top-[-5%] absolute border-[5px] border-gray-900
+                    w-[361px] h-[294px] lg:w-[528px] lg:h-[415px] rounded-[50px] object-cover"
         />
+        <div className="left-[-2%] top-30 lg:top-[-5%] absolute border-[5px] border-gray-900 w-[361px] h-[294px] lg:w-[528px] lg:h-[415px] rounded-[50px] inset-0 bg-purple-500 mix-blend-multiply opacity-40" />
         <img src="chat-quote.svg" alt="Aspas" className="absolute top-[-20%] right-30 lg:right-20" />
         <img src="decorations.svg" alt="Decorações" className="absolute top-90 bottom-[-150%] left-0" />
       </div>
@@ -30,20 +32,12 @@ const Card = () => {
   );
 };
 
-const images = [
-  { src: '/imageexample1.jpg', alt: 'Paisagem com montanhas' },
-  { src: '/imageexample2.jpg', alt: 'Pôr do sol na praia' },
-  { src: '/imageexample3.jpg', alt: 'Floresta verde' },
-  { src: '/imageexample.jpg', alt: 'Cidade à noite' },
-  { src: '/imageexample5.jpg', alt: 'Campo de flores' },
-];
-
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const [prevEnabled, setPrevEnabled] = useState(false);
   const [nextEnabled, setNextEnabled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]); // Tipo definido aqui ✅
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -58,14 +52,14 @@ const Carousel = () => {
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
-    setScrollSnaps(emblaApi.scrollSnapList()); // ✅ Agora está tipado corretamente
+    setScrollSnaps(emblaApi.scrollSnapList());
     emblaApi.on('select', onSelect);
   }, [emblaApi, onSelect]);
 
   return (
     <div className="relative" ref={emblaRef}>
       <div className="flex px-2 lg:px-4 py-8">
-        {images.map((img, i) => (
+        {[1, 2, 3, 4, 5].map((i) => (
           <div className="min-w-full" key={i}>
             <Card />
           </div>

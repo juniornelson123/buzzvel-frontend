@@ -81,7 +81,7 @@ export default function About() {
           <span>Meet international students & teachers</span>
         </h2>
         <p className="mt-4 lg:mt-8">Morbi sit egestas dignissim pharetra, sed amet. Tempus justo senectus risus ac vel, velit, nunc. Eget commodo eget in aliquam facilisi facilisi nec magna hendrerit. Placerat ipsum sit tellus urna, faucibus aenean lorem faucibus integer.</p>
-        <Link href="/login" className="mt-4 lg:mt-8 py-2 items-center border-0 border-black text-blue-600 font-semibold rounded-lg flex">
+        <Link href="/#" className="mt-4 lg:mt-8 py-2 items-center border-0 border-black text-blue-600 font-semibold rounded-lg flex">
           Explore teachers and students <span className="ml-1"><Image src="/arrow_right.svg" alt="arrow_right" width={12} height={12} /></span>
         </Link>
       </div>

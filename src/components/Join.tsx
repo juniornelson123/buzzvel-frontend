@@ -29,7 +29,7 @@ export default function Join() {
     >
       <h2 className="text-center text-2xl lg:text-5xl text-gray-900 font-bold lg:font-extrabold relative">Join a world of learning</h2>
       <p className="text-center mt-8 lg:w-1/4">Malesuada ut aliquam at ac est nisi, interdum etiam dignissim. Risus elit et fringilla habitant ut facilisi.</p>
-      <Link href="/login" className="mt-8 px-8 py-3 items-center border-2 border-orange-600 bg-orange-600 text-white font-semibold rounded-lg hover:border-2 hover:bg-transparent hover:text-orange-600 text-lg">
+      <Link href="/#" className="mt-8 px-8 py-3 items-center border-2 border-orange-600 bg-orange-600 text-white font-semibold rounded-lg hover:border-2 hover:bg-transparent hover:text-orange-600 text-lg">
         Sign Up Now
       </Link>
 

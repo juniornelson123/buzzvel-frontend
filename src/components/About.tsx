@@ -3,38 +3,46 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Card, fadeInAbout } from './utils/Card'
 
-// Motion wrapper para imagens do Next.js
 const MotionImage = motion(Image);
 
-const fadeIn = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-  viewport: { once: true },
-};
-
-const Card = () => (
-  <motion.div
-    className="shadow-xl w-[160px] lg:w-[200px] z-10 bg-white px-4 py-6 lg:py-8 rounded-xl items-center"
-    {...fadeIn}
-  >
-    <p className="py-1 px-3 bg-purple-100 text-purple-800 rounded w-fit text-sm">Featured</p>
-    <p className="text-base lg:text-xl font-medium my-2">The map of mathematics</p>
-    <p className="text-gray-600 text-sm mb-6">Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.</p>
-    <Link href="/sign-up" className="text-xs mr-2 px-4 lg:text-sm lg:px-8 py-3 border-2 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white">
-      Take Lesson
-    </Link>
-  </motion.div>
-);
-
+const items = [
+  {
+    tag: "Featured", 
+    color: "text-purple-800", 
+    bgColor: "bg-purple-100", 
+    size: "w-[160px] lg:w-[200px]", 
+    title: "The map of mathematics",
+    description: "Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.", 
+    link: "/" 
+  },
+  {
+    tag: "Popular", 
+    color: "text-blue-800", 
+    bgColor: "bg-blue-100", 
+    size: "w-[160px] lg:w-[200px]", 
+    title: "Design for how people think",
+    description: "Aliquam ut euismod condimentum elementum ultricies volutpat sit non.", 
+    link: "/" 
+  },
+  {
+    tag: "New", 
+    color: "text-green-800", 
+    bgColor: "bg-green-100", 
+    size: "w-[160px] lg:w-[200px]", 
+    title: "International & commercial law",
+    description: "Molestie integer eu arcu, mauris bibendum rhoncus imperdiet dui.", 
+    link: "/" 
+  },
+]
 export default function About() {
   return (
     <div className="container mx-auto py-4 flex h-[1000px] lg:h-[700px] items-center flex-col lg:flex-row">
       <div className="px-4 py-4 flex flex-col w-full lg:w-1/2 lg:h-full justify-center">
         <motion.h2
           className="text-xl lg:text-5xl text-gray-900 font-extrabold relative"
-          {...fadeIn}
+          {...fadeInAbout}
         >
           <span>An all-in-one app that makes it easier</span>
           <MotionImage
@@ -48,14 +56,14 @@ export default function About() {
 
         <motion.p
           className="block lg:hidden mt-6"
-          {...fadeIn}
+          {...fadeInAbout}
           transition={{ delay: 0.1, duration: 0.6 }}
         >
           Sit elit feugiat turpis sed integer integer accumsan turpis. Sed suspendisse nec lorem
           mauris. Pharetra, eu imperdiet ipsum ultrices amet, dui sit suspendisse.
         </motion.p>
 
-        <motion.ul className="mt-6 lg:mt-12 gap-4 flex flex-col" {...fadeIn} transition={{ delay: 0.2 }}>
+        <motion.ul className="mt-6 lg:mt-12 gap-4 flex flex-col" {...fadeInAbout} transition={{ delay: 0.2 }}>
           {[
             'Est et in pharetra magna adipiscing ornare aliquam.',
             'Tellus arcu sed consequat ac velit ut eu blandit.',
@@ -68,9 +76,9 @@ export default function About() {
           ))}
         </motion.ul>
 
-        <motion.div className="mt-8" {...fadeIn} transition={{ delay: 0.3 }}>
+        <motion.div className="mt-8" {...fadeInAbout} transition={{ delay: 0.3 }}>
           <Link
-            href="/login"
+            href="/#"
             className="text-sm lg:text-base py-2 items-center border-0 border-black text-blue-600 font-semibold rounded-lg flex"
           >
             Find more about the app
@@ -88,7 +96,7 @@ export default function About() {
           width={600}
           height={448}
           className="z-1 absolute top-0 left-[-20%] lg:top-30 w-full lg:h-[448px]"
-          {...fadeIn}
+          {...fadeInAbout}
         />
         <MotionImage
           src="/desktopabout.svg"
@@ -96,7 +104,7 @@ export default function About() {
           width={500}
           height={300}
           className="z-3 absolute top-0 lg:top-10 min-h-[235px]"
-          {...fadeIn}
+          {...fadeInAbout}
           transition={{ delay: 0.1 }}
         />
         <MotionImage
@@ -105,13 +113,13 @@ export default function About() {
           width={200}
           height={300}
           className="z-2 block top-0 left-0 bottom-0 w-42 h-100 lg:h-full absolute"
-          {...fadeIn}
+          {...fadeInAbout}
           transition={{ delay: 0.2 }}
         />
 
         <div className="z-10 absolute bottom-0 left-5 flex justify-between gap-4">
-          {[1, 2, 3].map((item) => (
-            <Card key={item} />
+          {items.map((item) => (
+            <Card key={item.tag} {...item}/>
           ))}
         </div>
       </div>

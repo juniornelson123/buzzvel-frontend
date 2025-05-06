@@ -3,21 +3,7 @@
 import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-
-const Card = () => {
-  return (
-    <div className="shadow-xl items-center z-10 bg-white px-4 py-8 rounded-xl">
-      <p className="text-lg mb-6">Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.</p>
-      <div className="flex items-center">
-        <img src="testimage1.jpg" className="rounded-full w-16 h-16" />
-        <div className="ml-4">
-          <p className="text-sm">Hellen Jummy</p>
-          <p className="text-gray-600 text-sm">Financial Counselor</p>
-        </div>
-      </div>
-    </div>
-  )
-}
+import { CardCarousel } from './utils/CardCarousel';
 
 interface CarouselNavigationProps {
   prevEnabled: boolean;
@@ -83,12 +69,12 @@ const CarouselData = () => {
   );
 };
 
-const images = [
-  { src: '/imageexample1.jpg', alt: 'Paisagem com montanhas' },
-  { src: '/imageexample2.jpg', alt: 'Pôr do sol na praia' },
-  { src: '/imageexample3.jpg', alt: 'Floresta verde' },
-  { src: '/imageexample.jpg', alt: 'Cidade à noite' },
-  { src: '/imageexample5.jpg', alt: 'Campo de flores' },
+const items = [
+  { image: '/testimage1.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage2.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage3.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage4.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
+  { image: '/testimage5.jpg', description: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.", author: "Hellen Jummy", role: "Financial Counselor" },
 ];
 
 export default function Carousel() {
@@ -125,13 +111,13 @@ export default function Carousel() {
         </div>
         <div className="relative" ref={emblaRef}>
           <div className="flex">
-            {images.map((src, i) => (
+            {items.map((item, i) => (
               <div
                 key={i}
                 className="flex-[0_0_40%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] px-2"
               >
                 <div className="py-4 flex flex-row gap-4 lg:mt-8">
-                  <Card />
+                  <CardCarousel {...item}/>
                 </div>
               </div>
             ))}

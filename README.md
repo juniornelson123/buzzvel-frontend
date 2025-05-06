@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Buzzvel 2025 Frontend Developer Test
 
-## Getting Started
+This project is my solution to the Frontend Developer technical challenge for the Buzzvel 2025 hiring process.
 
-First, run the development server:
+---
+
+## 🔗 Live Demo
+
+> [Click here to view the live project](https://buzzvel-frontend.vercel.app)
+
+---
+
+## 🛠️ Technologies Used
+
+- [Next.js 15](https://nextjs.org/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Embla Carousel](https://www.embla-carousel.com/get-started/react/)
+
+---
+
+## 🧪 Running the Project Locally
 
 ```bash
-npm run dev
-# or
+# Clone the repository
+git clone git@github.com:juniornelson123/buzzvel-frontend.git
+
+# Navigate into the project directory
+cd buzzvel-frontend
+
+# Install dependencies
+yarn install
+
+# Run the development server
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000 in your browser
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📋 Features Implemented
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ✅ Fully responsive layout (mobile and desktop)
+- ✅ Pixel-perfect implementation of the Figma design
+- ✅ Smooth animations using Framer Motion
+- ✅ Interactive carousel built with Embla
+- ✅ SEO enhancements (meta tags, semantic HTML)
+- ✅ Lazy loading and font optimizations
+- ✅ Clean code structure with reusable components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Performance & SEO Highlights
 
-## Learn More
+- 🔍 Meta tags for better SEO visibility
+- 📱 Mobile-first and fully accessible layout
+- 🧠 Semantic HTML for improved crawlability
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- All design and UX decisions were made following the Figma prototype provided.
+- The app was deployed using [Vercel](https://vercel.com/) to ensure optimal delivery and edge caching.
